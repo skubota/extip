@@ -1,4 +1,4 @@
-Package extip is external ip address check
+Package extip is external IPv4 or IPv6 address check
 ===================
 [![GoDev][godev-image]][godev-url]
 ![Go](https://github.com/skubota/extip/workflows/Go/badge.svg)
