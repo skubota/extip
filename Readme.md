@@ -9,7 +9,7 @@ Package extip is external IPv4 or IPv6 address check
 
 DESCRIPTION
 
-extip Get4() and Get6() returns the public facing IPv4 or IPv6 address of the requesting client by querying servers at STUN
+extip returns the public facing IPv4 or IPv6 address of the requesting client by querying servers at STUN
 
 usage
 
@@ -28,8 +28,17 @@ import (
 )
 
 func main() {
+	// Any
+	addr,err := extip.GetIP()
+	if err != nil {
+		fmt.Errorf("Address cannot get : %s\n", err)
+	}else{
+		fmt.Printf("Adress : %s\n",addr) 
+	}
+
+
 	// IPv4
-	ipv4,err := extip.Get4()
+	ipv4,err := extip.GetIP4()
 	if err != nil {
 		fmt.Errorf("IPv4 address cannot get : %s\n", err)
 	}else{
@@ -37,7 +46,7 @@ func main() {
 	}
 
 	// IPv6
-	ipv6,err := extip.Get6()
+	ipv6,err := extip.GetIP6()
 	if err != nil {
 		fmt.Errorf("IPv6 address cannot get : %s\n", err)
 	}else{
